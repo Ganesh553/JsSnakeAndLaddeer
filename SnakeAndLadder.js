@@ -20,6 +20,7 @@ class Snakeladder{
                                 return;
                             }else{
                                 Player = Player+value;
+                                diceCount=diceCount+1;
                                 console.log("Players gets Lader is: ",Player)
                                 if(Player == WinPoint){
                                     flag = false;
@@ -34,6 +35,7 @@ class Snakeladder{
                                 return;
                             }else{
                                 Player = Player - value1
+                                diceCount=diceCount+1;
                                 if(Player <= 0 || Player<=-1){
                                     Player=0;
                                 }
@@ -44,7 +46,9 @@ class Snakeladder{
                                 }
                             }
             }
-        }     
+            console.log("Number of times Dice Rolled is: ",diceCount)
+            
+        }      
         return;
     }  
 }
