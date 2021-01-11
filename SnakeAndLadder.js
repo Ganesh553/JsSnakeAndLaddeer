@@ -15,6 +15,7 @@ class Snakeladder{
                              break;
                 case Ladder: var value = Dice()
                             if(Player>=WinPoint){
+                                Player=WinPoint;
                                 console.log("Player reached: ",Player)
                                 return;
                             }else{
@@ -28,6 +29,7 @@ class Snakeladder{
                             break;
                 case Snake: var value1 = Dice()
                             if(Player>=WinPoint){
+                                Player=WinPoint;
                                 console.log("Player reached: ",Player)
                                 return;
                             }else{
