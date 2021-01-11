@@ -17,14 +17,14 @@ class Snakeladder{
                             if(Player>=WinPoint){
                                 Player=WinPoint;
                                 console.log("Player reached: ",Player)
-                                return;
+                                return Player;
                             }else{
                                 Player = Player+value;
                                 diceCount=diceCount+1;
                                 console.log("Players gets Lader is: ",Player)
                                 if(Player == WinPoint){
                                     flag = false;
-                                    return;
+                                    return Player;
                                 }
                             }
                             break;
@@ -32,7 +32,7 @@ class Snakeladder{
                             if(Player>=WinPoint){
                                 Player=WinPoint;
                                 console.log("Player reached: ",Player)
-                                return;
+                                return Player;
                             }else{
                                 Player = Player - value1
                                 diceCount=diceCount+1;
@@ -42,14 +42,14 @@ class Snakeladder{
                                 console.log("Players gets Snake is: ",Player)
                                 if(Player == WinPoint){
                                     flag = false;
-                                    return;
+                                    return Player;
                                 }
                             }
             }
             console.log("Number of times Dice Rolled is: ",diceCount)
             
         }      
-        return;
+        return Player;
     }  
 }
 let ref = new Snakeladder();
@@ -57,5 +57,14 @@ function rollDi(){
         let Dice = Math.floor(Math.random() * 6)+1;
         return Dice;
 }
-ref.DiceFunction(rollDi)
+var player1 = ref.DiceFunction(rollDi)
+var player2 = ref.DiceFunction(rollDi)
+if(player1==100){
+    console.log("Player 1 is Winner")
+}
+else{
+    console.log("Player 2 is Winner")
+}
+
+
 
