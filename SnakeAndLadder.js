@@ -1,5 +1,26 @@
 class Snakeladder{
-    DiceFunction(Dice){
+    twoPlayer(){
+        var Player1position;
+        var Player2position;
+        var position = Math.floor(Math.random() * 2)
+        if(position == 0){
+            Player1position = this.DiceFunction()
+        }
+        else{
+            Player2position = this.DiceFunction()
+        }
+        if(Player1position==100)
+            console.log("Player1 is winner")
+        else
+            console.log("Player2 is winner")
+        
+    }
+    rollDi(){
+        let Dice = Math.floor(Math.random() * 6)+1;
+        return Dice;
+    }
+
+    DiceFunction(){
         var WinPoint=100;
         var Ladder=1;
         var Snake=2;
@@ -13,7 +34,7 @@ class Snakeladder{
             switch(position){
                 case NoPlay: console.log("No die is Rolled")
                              break;
-                case Ladder: var value = Dice()
+                case Ladder: var value = this.rollDi()
                             if(Player>=WinPoint){
                                 Player=WinPoint;
                                 console.log("Player reached: ",Player)
@@ -28,7 +49,7 @@ class Snakeladder{
                                 }
                             }
                             break;
-                case Snake: var value1 = Dice()
+                case Snake: var value1 = this.rollDi()
                             if(Player>=WinPoint){
                                 Player=WinPoint;
                                 console.log("Player reached: ",Player)
@@ -53,18 +74,7 @@ class Snakeladder{
     }  
 }
 let ref = new Snakeladder();
-function rollDi(){
-        let Dice = Math.floor(Math.random() * 6)+1;
-        return Dice;
-}
-var player1 = ref.DiceFunction(rollDi)
-var player2 = ref.DiceFunction(rollDi)
-if(player1==100){
-    console.log("Player 1 is Winner")
-}
-else{
-    console.log("Player 2 is Winner")
-}
-
-
-
+console.log("adcsdcsc")
+ref.twoPlayer()
+// var f = ref.DiceFunction(rollDi)
+// console.log(f)
